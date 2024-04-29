@@ -1,0 +1,14 @@
+.sections-title > h1 {
+  font-family: Jost, Roboto, system-ui, -apple-system;
+  color: var(--tred);
+  width: 100%;
+  text-align: center;
+}
+
+.sections-title > h1::before, .sections-title > h1::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--tgrey);
+}

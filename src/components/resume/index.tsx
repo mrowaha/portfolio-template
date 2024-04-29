@@ -8,7 +8,6 @@ import * as React from 'react';
 import { Viewer, Worker } from '@react-pdf-viewer/core';
 import { zoomPlugin } from '@react-pdf-viewer/zoom';
 
-import { useTheme } from '@mui/material';
 import { ResumeProps } from './interface';
 
 export default function Resume(props: ResumeProps) {

@@ -3,8 +3,10 @@
  * @author Muhammad Rowaha
  */
 
+import SectionHeader from "@/components/helpers/section-header";
 import HeroResizeProvider from "@/providers/hero-resize";
 import React from "react";
+import { Container } from "@mui/material";
 
 export default function PortfolioLayout({
   children,
@@ -20,7 +22,11 @@ export default function PortfolioLayout({
       {children}
       {modal}
       <div className="sections-paper">
-        {experience}
+        <SectionHeader id="experience" title="Experience">
+          <Container sx={{marginBlock: "1rem"}}>
+            {experience}
+          </Container>
+        </SectionHeader>
       </div>  
     </HeroResizeProvider>
   )
