@@ -50,8 +50,8 @@ export default function ExperienceCard(props: ExperienceCardProps) {
               <Typography variant="body2" color={theme.palette.common.tgrey}>To: {props.data.to}</Typography>
               <List>
                 {
-                  props.data.roles.map(role => (
-                    <ListItem>
+                  props.data.roles.map((role, idx) => (
+                    <ListItem key={idx}>
                       <ListItemText primary={<Typography variant="body2" color={theme.palette.common.tgrey}>{role}</Typography>} />
                     </ListItem>
                   ))
