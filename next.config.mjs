@@ -9,6 +9,16 @@ const nextConfig = {
           use: 'raw-loader',
       });
       return config;
+  },
+
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/portfolio",
+        permanent: true
+      }
+    ]
   }
 };
 

@@ -10,7 +10,7 @@ import Intro from "@/components/intro";
 export default function Home() {
 
   return (
-    <main>
+    <>
       <div id="home">
         <Hero
           img={{src: author.src}}
@@ -22,6 +22,6 @@ export default function Home() {
           resume={{href: "/rowaha-resume.pdf"}} 
         />
       </div>
-    </main>
+    </>
   );
 }

@@ -23,8 +23,8 @@ import AppThemeProvider from "@/providers/theme";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 
 import sectionsRoutes from "./section-routes.json";
-import HeroResizeProvider from "@/providers/hero-resize";
-import { Container, Stack } from "@mui/material";
+import { Container } from "@mui/material";
+import React from "react";
 const sections = sectionsRoutes.sections;
 
 export const metadata: Metadata = {
@@ -34,10 +34,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  modal
 }: Readonly<{
   children: React.ReactNode;
-  modal: React.ReactNode;
 }>) {
 
   return (
@@ -49,12 +47,9 @@ export default function RootLayout({
               logo={{src: logo.src, text: "Portfolio"}}
               links={sections.map((name) => ({href: `#${name}`, title: name}))}
             />
-            <HeroResizeProvider>
-              <Container sx={{paddingBlockStart: "2rem"}}>
-                {children}
-                {modal}
-              </Container>
-            </HeroResizeProvider>
+            <Container sx={{paddingBlockStart: "2rem"}}>
+              {children} 
+            </Container>
           </AppThemeProvider>
         </AppRouterCacheProvider>
       </body>
