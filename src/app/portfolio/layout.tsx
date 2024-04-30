@@ -10,11 +10,13 @@ import { Container } from "@mui/material";
 export default function PortfolioLayout({
   children,
   modal,
-  experience
+  experience,
+  education
 } : {
   children: React.ReactNode;
   modal: React.ReactNode;
   experience: React.ReactNode;
+  education: React.ReactNode;
 }) {
   return (
     <HeroResizeProvider>
@@ -24,6 +26,11 @@ export default function PortfolioLayout({
         <SectionHeader id="experience" title="Experience">
           <Container sx={{marginBlock: "1rem"}}>
             {experience}
+          </Container>
+        </SectionHeader>
+        <SectionHeader id="education" title="Education">
+          <Container sx={{marginBlock: "1rem"}}>
+            {education}
           </Container>
         </SectionHeader>
       </div>  

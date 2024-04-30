@@ -5,21 +5,12 @@
 'use client';
 import { Grid } from "@mui/material";
 import { ExperienceSectionProps } from "./interface";
-import { useRef, useState, useEffect } from "react";
-import { useInView } from "framer-motion";
 import ExperienceCard from "./card";
+import useViewabelRef from "@/hooks/useViewableRef";
 
 export default function ExperienceSection(props: ExperienceSectionProps) {
 
-  const selfRef = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(selfRef);
-  const [hasDisplayed, setHasDisplayed] = useState(false);
-  
-  useEffect(() => {
-    if (isInView && !hasDisplayed) {
-      setHasDisplayed(true);
-    }
-  }, [isInView, hasDisplayed]);
+  const [selfRef, isInView] = useViewabelRef<HTMLDivElement>(null);
 
   return (
     <Grid ref={selfRef} container justifyContent='space-evenly'>

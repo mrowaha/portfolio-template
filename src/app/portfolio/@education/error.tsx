@@ -22,7 +22,7 @@ export default function Error({
   return (
     <SectionError 
       reset={reset}
-      title='Education'
+      title='Experience'
     />
   )
 }

@@ -1,21 +1,23 @@
 /**
- * Experience Card dealing with necessary animations
+ * Education Card Component
  * @author Muhammad Rowaha
  */
-import { ArrowDownward, ArrowUpward } from "@mui/icons-material";
-import { Button, Card, CardActions, CardContent, CardMedia, Paper, Typography, Grow, Collapse, Box, useTheme, List, ListItem, ListItemText } from "@mui/material";
 import * as React from "react";
-import { ExperienceCardProps } from "./interface";
+import { type EducationCardProps } from "./interface";
+import { ArrowDownward, ArrowUpward } from "@mui/icons-material";
+import { Button, Card, CardActions, CardContent, CardMedia, Paper, Typography, Grow, Collapse, Box, useTheme, List, ListItem, ListItemText, Divider } from "@mui/material";
 import Image from "next/image";
 import { imageKitLoader } from "@/lib/loader/imagekit";
 
-export default function ExperienceCard(props: ExperienceCardProps) {
+export default function EducationCard(props: EducationCardProps) {
+
   const [expand, setExpand] = React.useState<boolean>(false);
   const handleExpand = React.useCallback(() => {
     setExpand(prev => !prev);
   }, []);
 
   const theme = useTheme();
+
 
   return (
     <Grow in={props.grow} {...(props.growTimeout? {timeout: props.growTimeout} : {})}>
@@ -32,31 +34,34 @@ export default function ExperienceCard(props: ExperienceCardProps) {
             <Image 
               src={props.data.img}
               loader={imageKitLoader}
-              alt={`${props.data.company} logo`}
+              alt={`${props.data.school} logo`}
               fill
             />
           </CardMedia>
           <CardContent>
             <Box sx={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom: "1rem"}}>
             <Typography variant="h6" textAlign="center" color={theme.palette.common.tred}>
-              {props.data.position}
+              {props.data.degree}
             </Typography>
             <Typography variant="body1" textAlign="center" color={theme.palette.common.tpurple}>
-              @{props.data.company}
+              @{props.data.school}
             </Typography>
             </Box>
             <Collapse in={expand} collapsedSize={0} sx={{maxHeight: 250, overflowY: "scroll", overflowWrap: "break-word"}}>
               <Typography variant="body2" color={theme.palette.common.tgrey}>From: {props.data.from}</Typography>
               <Typography variant="body2" color={theme.palette.common.tgrey}>To: {props.data.to}</Typography>
-              <List>
+              <Typography variant="body2" fontWeight="600" color={theme.palette.common.tgrey}>CourseWork:</Typography>
+              <Typography variant="body2" color={theme.palette.common.tgrey}>
                 {
-                  props.data.roles.map((role, idx) => (
-                    <ListItem key={idx}>
-                      <ListItemText primary={<Typography variant="body2" color={theme.palette.common.tgrey}>{role}</Typography>} />
-                    </ListItem>
-                  ))
+                  props.data.coursework.join(",")
                 }
-              </List>
+              </Typography>
+              <Typography variant="body2" fontWeight="600" color={theme.palette.common.tgrey}>Highlights:</Typography>
+              <Typography variant="body2" color={theme.palette.common.tgrey}>
+                {
+                  props.data.highlights.join(",")
+                }
+              </Typography>
             </Collapse>
           </CardContent>
           <CardActions sx={{display: "flex", justifyContent: "center"}}>
@@ -71,5 +76,5 @@ export default function ExperienceCard(props: ExperienceCardProps) {
         </Card>
       </Paper>
     </Grow>
-  )  
+  )
 }
