@@ -7,7 +7,7 @@
  * @author Muhammad Rowaha
  */
 import Link from "next/link";
-import React, {useRef, useTransition, type PropsWithChildren} from "react";
+import React, {ForwardedRef, forwardRef, useRef, useTransition, type PropsWithChildren} from "react";
 import { useScroll, useTransform } from "framer-motion";
 import { AppBar, styled, Box, Avatar, Typography, useTheme } from "@mui/material";
 
@@ -31,11 +31,10 @@ const StyledAppBar = styled(AppBar)(({theme}) => ({
   padding: 20
 }))
 
-export default function NavBarContainer(props : NavBarContainerProps) {
+function NavBarContainer(props : NavBarContainerProps, ref : ForwardedRef<HTMLElement | null>) {
 
   // we are only concerned with the y scroll only
   const {scrollYProgress} = useScroll(); 
-  const selfRef = useRef<HTMLElement | null>(null);
   const height = useTransform(scrollYProgress, props.scrollBounds, props.heightBounds);
   const [currentHeight, setCurrentHeight] = React.useState<number>(props.heightBounds[0]);
   
@@ -53,7 +52,7 @@ export default function NavBarContainer(props : NavBarContainerProps) {
         height: `${currentHeight}px`,
         fontSize: `${currentHeight / 2}px`
       }}
-      ref={selfRef}
+      ref={ref}
     > 
       <Logo {...props.logo} parentHeight={currentHeight} />
       {props.children}
@@ -61,6 +60,7 @@ export default function NavBarContainer(props : NavBarContainerProps) {
   )
 }
 
+export default forwardRef<HTMLElement | null, NavBarContainerProps>(NavBarContainer);
 
 /* Internal Logo Interface */
 interface LogoInterface extends NavBarLogo {

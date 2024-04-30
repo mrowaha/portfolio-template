@@ -33,6 +33,7 @@ background: #DAD1FF;
 
 body {
   background: linear-gradient(to right, var(--tpurple-bg) 15%, white, var(--tred-bg) 85%);
+  overflow-x: hidden;
 }
 
 .sections-paper {
