@@ -63,7 +63,7 @@ export default function NavBar(props: NavBarProps) {
       {/* Links */}
       <Box sx={{display: "flex", gap: 2}}>
         {
-          isMediumViewport && props.links.map((link) => <NavLink {...link} />) 
+          isMediumViewport && props.links.map((link) => <NavLink key={link.href} {...link} />) 
         }
         {
           isSmallViewport && <>
@@ -84,7 +84,7 @@ export default function NavBar(props: NavBarProps) {
               }}
             >
               {
-                props.links.map(link => <MenuLink {...link} />)
+                props.links.map(link => <MenuLink key={link.href} {...link} />)
               }
             </Menu>
           </>
