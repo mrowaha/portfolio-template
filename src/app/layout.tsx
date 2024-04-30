@@ -45,7 +45,7 @@ export default function RootLayout({
           <AppThemeProvider>
             <NavBar 
               logo={{src: logo.src, text: "Portfolio"}}
-              links={sections.map((name) => ({href: `#${name}`, title: name}))}
+              links={sections.map((name) => ({href: `/portfolio#${name}`, title: name}))}
             />
             <Container sx={{paddingBlockStart: "2rem"}}>
               {children} 

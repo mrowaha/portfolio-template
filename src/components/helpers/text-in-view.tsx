@@ -4,9 +4,9 @@
  */
 "use client";
 
-import { Fade } from "@mui/material";
+import Fade from "@mui/material/Fade";
 import { useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 export interface TextInViewProps {
   text: string;

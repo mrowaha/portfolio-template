@@ -2,7 +2,6 @@
  * Portfolio page layout rendering Hero and Paper view
  * @author Muhammad Rowaha
  */
-
 import SectionHeader from "@/components/helpers/section-header";
 import HeroResizeProvider from "@/providers/hero-resize";
 import React from "react";
