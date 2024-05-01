@@ -18,7 +18,7 @@ export default function ProjectsSection(props: ProjectsSectionProps) {
       <GenericCarousel 
         items={
           props.projects.map((projects, idx) => (
-            <Box sx={{marginInline: "1rem"}}>
+            <Box key={idx} sx={{marginInline: "1rem"}}>
               <ProjectCard 
                 data={projects}
                 grow={isInView}
