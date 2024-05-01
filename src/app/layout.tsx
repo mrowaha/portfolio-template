@@ -17,6 +17,9 @@ import '@fontsource/roboto/700.css';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/zoom/lib/styles/index.css';
 
+// carousel styles
+import "react-multi-carousel/lib/styles.css";
+
 import NavBar from "@/components/navbar";
 import logo from "@/assets/rowaha-logo.png";
 import AppThemeProvider from "@/providers/theme";

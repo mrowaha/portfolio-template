@@ -11,13 +11,16 @@ export default function PortfolioLayout({
   children,
   modal,
   experience,
-  education
+  education,
+  projects
 } : {
   children: React.ReactNode;
   modal: React.ReactNode;
   experience: React.ReactNode;
   education: React.ReactNode;
+  projects: React.ReactNode;
 }) {
+
   return (
     <HeroResizeProvider>
       {children}
@@ -31,6 +34,11 @@ export default function PortfolioLayout({
         <SectionHeader id="education" title="Education">
           <Container sx={{marginBlock: "1rem"}}>
             {education}
+          </Container>
+        </SectionHeader>
+        <SectionHeader id="projects" title="Projects">
+          <Container sx={{marginBlock: "1rem"}}>
+            {projects}
           </Container>
         </SectionHeader>
       </div>  
