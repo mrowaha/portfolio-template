@@ -28,6 +28,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import sectionsRoutes from "./section-routes.json";
 import { Container } from "@mui/material";
 import React from "react";
+import Contact from "@/components/contact";
 const sections = sectionsRoutes.sections;
 
 export const metadata: Metadata = {
@@ -53,6 +54,7 @@ export default function RootLayout({
             <Container sx={{paddingBlockStart: "2rem"}}>
               {children} 
             </Container>
+            <Contact />
           </AppThemeProvider>
         </AppRouterCacheProvider>
       </body>
