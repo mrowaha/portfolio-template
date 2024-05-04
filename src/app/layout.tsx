@@ -26,7 +26,7 @@ import AppThemeProvider from "@/providers/theme";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 
 import sectionsRoutes from "./section-routes.json";
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import React from "react";
 import Contact from "@/components/contact";
 const sections = sectionsRoutes.sections;
@@ -55,6 +55,11 @@ export default function RootLayout({
               {children} 
             </Container>
             <Contact />
+            <footer style={{width: "100%", background: "black", paddingBlock: "0.75rem"}}>
+              <Typography variant="body2" color="#fff" textAlign="center">
+                &copy; 2024 | Muhammad Rowaha
+              </Typography>
+            </footer>
           </AppThemeProvider>
         </AppRouterCacheProvider>
       </body>

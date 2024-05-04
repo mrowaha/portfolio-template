@@ -5,6 +5,7 @@ import { PropsWithChildren } from "react";
 declare module "@mui/material/styles/createPalette" {
   interface CommonColors {
     tpurple: string;
+    "tpurple-dark": string;
     tred: string;
     tgrey: string;
   }
@@ -17,6 +18,7 @@ export const theme = createTheme({
     },
     common: {
       tpurple: "#690169",
+      ["tpurple-dark"]: "#4D004D",
       tred: "#d6023b",
       tgrey: "#313131aa"
     }
