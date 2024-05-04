@@ -6,6 +6,7 @@ import SectionHeader from "@/components/helpers/section-header";
 import HeroResizeProvider from "@/providers/hero-resize";
 import React from "react";
 import { Container } from "@mui/material";
+import DraggableContact from "@/components/draggable-contact";
 
 export default function PortfolioLayout({
   children,
@@ -25,7 +26,7 @@ export default function PortfolioLayout({
     <HeroResizeProvider>
       {children}
       {modal}
-      <div className="sections-paper">
+      <div id="sections-paper" className="sections-paper">
         <SectionHeader id="experience" title="Experience">
           <Container sx={{marginBlock: "1rem"}}>
             {experience}
@@ -41,6 +42,7 @@ export default function PortfolioLayout({
             {projects}
           </Container>
         </SectionHeader>
+        <DraggableContact />
       </div>  
     </HeroResizeProvider>
   )
