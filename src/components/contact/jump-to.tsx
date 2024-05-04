@@ -53,7 +53,7 @@ export default function JumpTo(props: JumpToProps) {
               href:`portfolio#projects`
             }
         ] .map(link => (
-            <Link href={link.href}>
+            <Link key={link.href} href={link.href}>
               <Typography color="#fff" variant="body2">{link.name}</Typography>
             </Link>
           ))
