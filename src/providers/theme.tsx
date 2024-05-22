@@ -8,6 +8,7 @@ declare module "@mui/material/styles/createPalette" {
     "tpurple-dark": string;
     tred: string;
     tgrey: string;
+    "tgrey-light": string;
   }
 }
 
@@ -20,7 +21,8 @@ export const theme = createTheme({
       tpurple: "#690169",
       ["tpurple-dark"]: "#4D004D",
       tred: "#d6023b",
-      tgrey: "#313131aa"
+      tgrey: "#313131aa",
+      ["tgrey-light"]: "#31313122"
     }
   },
   typography: {

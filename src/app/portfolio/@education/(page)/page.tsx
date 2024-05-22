@@ -4,7 +4,7 @@
  */
 import {z} from "zod";
 import { schema as education, type SchemaType as Education } from "@/lib/schema/education";
-import { env } from "@/utils/env";
+import { db } from "@/lib/admin/db";
 import EducationSection from "@/components/sections/education";
 
 export const dynamic = 'force-dynamic';
@@ -12,8 +12,9 @@ export const dynamic = 'force-dynamic';
 const educationsSchema = z.array(education);
 export default async function Education() {
 
-  const response = await fetch(env.FIREBASE_URL + "/education.json");
-  const data = await response.json();
+  const ref = db.ref("education");
+  const snapshot = await ref.once("value");
+  const data = snapshot.val();
 
   let educations : Education[] = Object.values(data);
   educationsSchema.parse(educations);

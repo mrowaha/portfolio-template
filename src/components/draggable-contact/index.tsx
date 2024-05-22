@@ -54,23 +54,20 @@ export default function DraggableContact() {
         display : "flex",
         flexDirection : "column",
         width: "fit-content",
-        background: theme.palette.common.tgrey,
+        background: theme.palette.common["tgrey-light"],
       }}
     >
-     <Badge badgeContent={<PanTool style={{fill: theme.palette.common.tred}} fontSize="small" />}>
       <Stack gap={1} sx={{paddingBlock: "0.25rem", paddingInlineEnd: "0.25rem"}}>
-          {
-            React.Children.toArray(
-              contactButtonLinks.map(props => (
-                <IconButton size="small" sx={{...props.sx, borderRadius: 2, boxShadow: "4px 4px 10px rgba(0, 0, 0, 0.5)"}} href={props.href}>
-                  {props.icon}
-                </IconButton>
-              ))
-            )
-          }
-        </Stack>
-    </Badge> 
-      
+        {
+          React.Children.toArray(
+            contactButtonLinks.map(props => (
+              <IconButton size="small" sx={{...props.sx, borderRadius: 2, boxShadow: "4px 4px 10px rgba(0, 0, 0, 0.5)"}} href={props.href}>
+                {props.icon}
+              </IconButton>
+            ))
+          )
+        }
+      </Stack>
     </motion.div>
   )
 }
